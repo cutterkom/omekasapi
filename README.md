@@ -28,7 +28,7 @@ library(omekasapi)
 
 api_url <- https://myomekas.org/api
 
-base_req <- create_base_url(
+base_req <- create_base_req(
   api_url, 
   key_identity=Sys.getenv("OMEKA_KEY_ID"),
   key_credential=Sys.getenv("OMEKA_KEY_CRED")) 

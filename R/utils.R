@@ -20,7 +20,7 @@ check_status <- function(res){
 #' @importFrom httr2 request
 #' @importFrom httr2 req_url_query
 #' @export
-create_base_url <- function(omeka_url, key_identity, key_credential) {
+create_base_req <- function(omeka_url, key_identity, key_credential) {
   req <- httr2::request(omeka_url) |>
     httr2::req_url_query(
       key_identity=key_identity,
