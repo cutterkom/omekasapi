@@ -4,12 +4,19 @@
 \alias{query_items_by_vocab_id}
 \title{Query items from specific vocabulary id}
 \usage{
-query_items_by_vocab_id(base_req, per_page = 99999, ressource_id = NULL)
+query_items_by_vocab_id(
+  base_req,
+  per_page = 99999,
+  query_string = "items",
+  ressource_id = NULL
+)
 }
 \arguments{
 \item{base_req}{base request, typically result of `create_base_request`}
 
 \item{per_page}{integer, number of items to fetch, default set to `99999`}
+
+\item{query_string}{fetch data from `items` endpoint}
 
 \item{ressource_id}{ressource_id}
 }

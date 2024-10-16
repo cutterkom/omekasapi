@@ -63,6 +63,7 @@ query_ressource_classes <- function(base_req, per_page = 99999, query_string = "
 #' Query items from specific vocabulary id
 #' @param base_req base request, typically result of `create_base_request`
 #' @param per_page integer, number of items to fetch, default set to `99999`
+#' @param query_string fetch data from `items` endpoint
 #' @param ressource_id ressource_id
 #'
 #' @export
@@ -80,7 +81,7 @@ query_ressource_classes <- function(base_req, per_page = 99999, query_string = "
 #' \dontrun{
 #' query_items_by_vocab_id(base_req, ressource_id = 1)
 #' }
-query_items_by_vocab_id <- function(base_req, per_page = 99999, ressource_id = NULL) {
+query_items_by_vocab_id <- function(base_req, per_page = 99999, query_string = "items", ressource_id = NULL) {
   args <- list(per_page = per_page, ressource_id)
   # Check that at least one argument is not null
   attempt::stop_if_all(args, is.null, "You need to specify at least one argument")
