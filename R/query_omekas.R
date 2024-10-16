@@ -82,7 +82,7 @@ query_ressource_classes <- function(base_req, per_page = 99999, query_string = "
 #' query_items_by_vocab_id(base_req, ressource_id = 1)
 #' }
 query_items_by_vocab_id <- function(base_req, per_page = 99999, query_string = "items", ressource_id = NULL) {
-  args <- list(per_page = per_page, ressource_id)
+  args <- list(per_page = per_page, query_string = query_string, ressource_id)
   # Check that at least one argument is not null
   attempt::stop_if_all(args, is.null, "You need to specify at least one argument")
   # Chek for internet
