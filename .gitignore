@@ -51,3 +51,5 @@ rsconnect/
 LICENSE.md
 data-raw
 .DS_store
+
+tests/testthat/test-get-items-by-id.R
