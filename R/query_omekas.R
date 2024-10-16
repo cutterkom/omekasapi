@@ -58,3 +58,49 @@ query_ressource_classes <- function(base_req, per_page = 99999, query_string = "
   resp |>
     httr2::resp_body_json(simplifyVector = TRUE)
 }
+
+
+#' Query items from specific vocabulary id
+#' @param base_req base request, typically result of `create_base_request`
+#' @param per_page integer, number of items to fetch, default set to `99999`
+#' @param ressource_id ressource_id
+#'
+#' @export
+#' @rdname query_ressource_classes
+#'
+#' @importFrom attempt stop_if_all
+#' @importFrom httr2 req_url_path_append
+#' @importFrom httr2 req_url_query
+#' @importFrom httr2 req_perform
+#' @importFrom httr2 resp_body_json
+#' @importFrom cli cli_inform
+#'
+#' @return the results from the search
+#' @examples
+#' \dontrun{
+#' query_items_by_vocab_id(base_req, ressource_id = 1)
+#' }
+query_items_by_vocab_id <- function(base_req, per_page = 99999, ressource_id = NULL) {
+  args <- list(per_page = per_page, ressource_id)
+  # Check that at least one argument is not null
+  attempt::stop_if_all(args, is.null, "You need to specify at least one argument")
+  # Chek for internet
+  check_internet()
+
+  # Create the request
+  req <- base_req |>
+    httr2::req_url_path_append(query_string) |>
+    httr2::req_url_query(!!!args)
+
+  cli::cli_inform("{.url {req$url}}")
+
+  resp <- req |>
+    httr2::req_perform()
+
+  # Check the result
+  check_status(resp)
+
+  # extract json
+  resp |>
+    httr2::resp_body_json(simplifyVector = TRUE)
+}

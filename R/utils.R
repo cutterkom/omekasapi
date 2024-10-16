@@ -1,3 +1,5 @@
+utils::globalVariables(c("query_string"))
+
 #' @importFrom attempt stop_if_not
 #' @importFrom curl has_internet
 check_internet <- function(){
