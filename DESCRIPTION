@@ -1,0 +1,16 @@
+Package: omekasapi
+Title: My Omeka S API Wrapper
+Version: 0.1
+Authors@R: 
+    person("Katharina", "Brunner", , "kontakt@katharinabrunner.de", role = c("cre", "aut"))
+Description: Interact with Omeka S API with R.
+License: GPL (>= 3) + file LICENSE
+URL: http://this
+BugReports: http://that
+Imports: 
+    attempt,
+    cli,
+    curl,
+    httr2
+Encoding: UTF-8
+RoxygenNote: 7.3.2
