@@ -2,7 +2,6 @@
 % Please edit documentation in R/query_omekas.R
 \name{query_ressource_classes}
 \alias{query_ressource_classes}
-\alias{query_items_by_vocab_id}
 \title{Query ressource classes}
 \usage{
 query_ressource_classes(
@@ -13,8 +12,6 @@ query_ressource_classes(
   vocabulary_prefix = NULL,
   term = NULL
 )
-
-query_items_by_vocab_id(base_req, per_page = 99999, ressource_id = NULL)
 }
 \arguments{
 \item{base_req}{base request, typically result of `create_base_request`}
@@ -28,13 +25,9 @@ query_items_by_vocab_id(base_req, per_page = 99999, ressource_id = NULL)
 \item{vocabulary_prefix}{string, get all classes for special vocabulary, e.g. `dcterms`, `foaf`}
 
 \item{term}{string, search for terms, e.g. `dcterms:title`, `foaf:Person`}
-
-\item{ressource_id}{ressource_id}
 }
 \value{
-the results from the search
-
-the results from the search
+get vocabulary classes in Omeka S
 }
 \description{
 This function get data from the `resource_classes` endpoint.
@@ -43,8 +36,5 @@ This function get data from the `resource_classes` endpoint.
 \dontrun{
 query_ressource_classes(req, vocabulary_prefix = "dcterms")
 query_ressource_classes(req, get_all = TRUE)
-}
-\dontrun{
-query_items_by_vocab_id(base_req, ressource_id = 1)
 }
 }

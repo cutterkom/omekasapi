@@ -17,7 +17,7 @@
 #' @importFrom httr2 resp_body_json
 #' @importFrom cli cli_inform
 #'
-#' @return the results from the search
+#' @return get vocabulary classes in Omeka S
 #' @examples
 #' \dontrun{
 #' query_ressource_classes(req, vocabulary_prefix = "dcterms")
@@ -66,7 +66,7 @@ query_ressource_classes <- function(base_req, per_page = 99999, query_string = "
 #' @param ressource_id ressource_id
 #'
 #' @export
-#' @rdname query_ressource_classes
+#' @rdname query_items_by_vocab_id
 #'
 #' @importFrom attempt stop_if_all
 #' @importFrom httr2 req_url_path_append
@@ -75,7 +75,7 @@ query_ressource_classes <- function(base_req, per_page = 99999, query_string = "
 #' @importFrom httr2 resp_body_json
 #' @importFrom cli cli_inform
 #'
-#' @return the results from the search
+#' @return items with this vocabulary id
 #' @examples
 #' \dontrun{
 #' query_items_by_vocab_id(base_req, ressource_id = 1)
