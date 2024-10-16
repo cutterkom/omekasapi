@@ -30,8 +30,8 @@ api_url <- https://myomekas.org/api
 
 base_req <- create_base_url(
   api_url, 
-  key_identity=Sys.getenv("OMEKA_FORUM_KEY_ID"),
-  key_credential=Sys.getenv("OMEKA_FORUM_KEY_CRED")) 
+  key_identity=Sys.getenv("OMEKA_KEY_ID"),
+  key_credential=Sys.getenv("OMEKA_KEY_CRED")) 
   
 base_req |>
   query_ressource_classes(get_all = TRUE) 
