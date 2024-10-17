@@ -26,7 +26,7 @@ devtools::install_github("cutterkom/omekasapi")
 ``` r
 library(omekasapi)
 
-api_url <- https://myomekas.org/api
+api_url <- "https://myomekas.org/api"
 
 base_req <- create_base_req(
   api_url, 
